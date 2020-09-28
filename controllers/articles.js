@@ -27,7 +27,6 @@ module.exports.createArticle = ((req, res, next) => {
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {
-        // можно улучшить
         next(new NotFoundError('Невалидные данные'));
         return;
       }
