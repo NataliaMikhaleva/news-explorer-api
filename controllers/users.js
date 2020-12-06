@@ -17,6 +17,7 @@ module.exports.getUser = ((req, res, next) => {
         data: {
           _id: user._id,
           email: user.email,
+          name: user.name,
         },
       });
     })
