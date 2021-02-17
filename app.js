@@ -38,45 +38,6 @@ app.post('/signup', celebrateUser, createUser);
 app.use('/users', auth, users);
 app.use('/articles', auth, articles);
 
-// const allowedCors = [
-//   'http://newsexplorer.gq',
-//   'localhost:3000',
-//   'https://nataliamikhaleva.github.io/NataliaMikhaleva.github.io-news-explorer-frontend/',
-// ];
-
-// const corsOptions = {
-//   origin: [
-//     'http://newsexplorer.gq',
-//     'http://localhost:8080',
-//     'https://nataliamikhaleva.github.io/NataliaMikhaleva.github.io-news-explorer-frontend/',
-//   ],
-//   methods: ['GET,HEAD,PUT,PATCH,POST,DELETE'],
-//   preflightContinue: false,
-//   optionsSuccessStatus: 204,
-//   allowedHeaders: [
-//     'Content-Type',
-//     'origin',
-//     'x-acess-token',
-//   ],
-//   credentials: true,
-// };
-
-// app.use('*', cors(corsOptions));
-
-//app.use(cors());
-// app.options('*', cors());
-
-// app.use(cors(), (req, res, next) => {
-//   const { origin } = req.headers;
-//   if (allowedCors.includes(origin)) {
-//     res.header('Access-Control-Allow-Origin', origin);
-//   }
-//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-//   res.header('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE');
-
-//   next();
-// });
-
 app.use((req, res, next) => {
   next(new NotFoundError('Запрашиваемый ресурс не найден'));
 });
@@ -95,5 +56,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Сервер запущен, порт: ${PORT}.`);
+  console.log(`Сервер запущен, порт : ${PORT}.`);
 });
